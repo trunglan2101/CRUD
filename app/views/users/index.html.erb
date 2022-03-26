@@ -24,7 +24,8 @@
     <% end %>
   </tbody>
 </table>
-<div>
+<%# <div>
 
   <%# <%= link_to 'Create User', new_user_path %>
-</div>
+<%# </div> %>
+<%= will_paginate @users, previous_label: "Older", next_label: "Newer", inner_window: 1, outer_window: 0 %>
