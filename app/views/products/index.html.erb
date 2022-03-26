@@ -1,0 +1,28 @@
+<h1>Products#index</h1>
+
+<table class="table">
+  <thead>
+    <th>Stt</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+  <% @products.each_with_index do |product| %>
+    <tr>
+      <td><%= index+1 %></td>
+      <td><%= product.name %></td>
+      <td><%= product.description %></td>
+      <td><%= product.price %></td>
+      <td>
+        <%= link_to "Edit", "#" %>
+        <%= link_to "Delete", "#", method: :delete, data: {confirm: "are ypu sure?"} %>
+      </td>      
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<div>
+  <%= link_to 'Create product', "#" %>
+</div>

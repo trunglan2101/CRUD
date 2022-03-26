@@ -1,0 +1,28 @@
+<h1>Catelogies#index</h1>
+
+<table class="table table-success table-striped">
+  <thead>
+    <th>Stt</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <% @catelogies.each_with_index do |catelogy, index|%>
+      <tr>
+        <td><%= index+1 %></td>
+        <td><%= link_to catelogy.name %></td>
+        <td><%= catelogy.description %></td>
+        <% if current_user.admin? %>
+          <td>
+            <%= link_to 'Edit', edit_catelogy_path(catelogy) %>
+            <%= link_to 'Delete', catelogy, method: :delete, data: {confirm: "Are you sure?"} %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div>
+  <%= link_to 'Create catelogy', new_catelogy_path if current_user.admin %> 
+</div>
