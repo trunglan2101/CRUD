@@ -58,3 +58,4 @@ gem "devise"
 gem 'faker', '~> 2.20'
 gem 'will_paginate', '~> 3.3', '>= 3.3.1'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.2'
+gem "image_processing"
