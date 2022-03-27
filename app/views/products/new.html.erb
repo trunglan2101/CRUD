@@ -1,2 +1,31 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
+<div class="container">
+  <h1>Products#new</h1>
+  
+  <div class="bg-secondary">
+    <%= form_for @product do |f| %>
+      <div class="mb-3">
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+      </div>
+    
+      <div class="mb-3">
+        
+        <%= f.text_field :name, placeholder:"name" %>
+      </div>
+    
+      <div class="mb-3">
+        <%= f.label :description %>
+        <%= f.text_area :description%>
+      </div>
+    
+      <div class="mb-3">
+        <%= f.label :price %>
+        <%= f.text_field :price %>
+      </div>
+    
+      <div class="btn">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
